@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,19 +7,25 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
     <com.google.android.material.tabs.TabLayout
-
+        android:layout_centerInParent="true"
         android:id="@+id/tab_layout"
-        app:tabTextColor="#FF5722"
-        app:tabIndicatorColor="#CDDC39"
+        app:tabTextColor="#673AB7"
+        app:tabIndicatorColor="#673AB7"
         app:tabSelectedTextColor="@color/white"
         app:tabTextAppearance="@style/MyCustomTextAppearance"
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/purple_500"
+        android:background="@color/white"
         app:tabInlineLabel="true"
         app:tabIndicatorFullWidth="true"
+        app:tabIndicatorHeight="90dp"
 
         app:tabPaddingStart="25dp"
 
@@ -28,16 +34,12 @@
         app:tabMode="scrollable"
         app:tabIndicatorGravity="stretch"
 
-        app:tabIndicatorHeight="5dp"
-        app:tabIndicatorAnimationMode="fade"
+
+        app:tabIndicatorAnimationMode="elastic"
         app:tabIconTint="@color/tabcolor"
         app:tabIndicator="@drawable/indicatorcustom"
     />
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewpager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
 
-</LinearLayout>
+
+</RelativeLayout>

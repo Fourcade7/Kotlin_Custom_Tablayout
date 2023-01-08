@@ -46,17 +46,32 @@ class MainActivity : AppCompatActivity() {
 
         adapter = NumberAdapter(this@MainActivity)
         viewPager.adapter = adapter
+        viewPager.setPageTransformer(ZoomOutPageTransformer())
+
+
+
 
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = tabNames[position]
             tab.setIcon(tabImages.get(position))
 
+
             if (position == 2) {
                 val badge = tab.getOrCreateBadge()
                 badge.number = 1
+                tab.setIcon(R.drawable.ic_baseline_favorite_24)
+
+            }
+            if (position == 3) {
+                val badge = tab.getOrCreateBadge()
+                badge.number = 20
+
+
             }
 
         }.attach()
+
+
 
 
 
