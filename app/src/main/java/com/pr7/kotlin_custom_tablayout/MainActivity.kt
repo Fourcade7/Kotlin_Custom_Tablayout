@@ -46,7 +46,8 @@ class MainActivity : AppCompatActivity() {
 
         adapter = NumberAdapter(this@MainActivity)
         viewPager.adapter = adapter
-        viewPager.setPageTransformer(ZoomOutPageTransformer())
+        //viewPager.setPageTransformer(ZoomOutPageTransformer())
+       viewPager.setPageTransformer(DepthPageTransformer())
 
 
 
@@ -60,6 +61,7 @@ class MainActivity : AppCompatActivity() {
                 val badge = tab.getOrCreateBadge()
                 badge.number = 1
                 tab.setIcon(R.drawable.ic_baseline_favorite_24)
+
 
             }
             if (position == 3) {
